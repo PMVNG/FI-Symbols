@@ -31,12 +31,21 @@ Gói tài nguyên ký tự đặc biệt tùy chỉnh bổ sung được sử d�
 1. [Tải về](https://github.com/NhanAZ/FI-Symbols/archive/refs/heads/master.zip) gói tài nguyên
 2. Duy chuyển gói tài nguyên và đặt vào thư mục resource_packs (`PocketMine-MP/resource_packs/`)
 3. Vào resource_packs.yml (`PocketMine-MP/resource_packs/resource_packs.yml`) và chỉnh thành định dạng như bên dưới:
-```
----
+```yaml
+#This configuration file controls global resources used on your PocketMine-MP server.
+
+#Choose whether players must use your chosen resource packs to join the server.
+#NOTE: This will do nothing if there are no resource packs in the stack below.
 force_resources: true
 resource_stack:
   - PMVNG-FI-Symbols-master.zip
-...
+  #Resource packs here are applied from bottom to top. This means that resources in higher packs will override those in lower packs.
+  #Entries here must indicate the filename of the resource pack.
+  #Example
+  # - natural.zip
+  # - vanilla.zip
+  #If you want to force clients to use vanilla resources, you must place a vanilla resource pack in your resources folder and add it to the stack here.
+
 ```
 4. Sao chép ký tự tương ứng và dán ra để sử dụng.
 
